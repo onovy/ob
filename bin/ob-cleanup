@@ -1,0 +1,14 @@
+#!/bin/bash
+
+mount | grep /run/schroot
+if [ $? == 0 ] ; then
+	echo "Still mounted!"
+	exit
+fi
+
+sudo rm -rf /run/schroot/mount/*
+sudo rm -rf /var/lib/schroot/unpack/*
+sudo rm -rf /var/lib/schroot/session/*
+sudo rm -rf /var/lib/schroot/union/overlay/*
+sudo rm -rf /var/lib/schroot/union/underlay/*
+sudo rm -rf /var/lib/sbuild/build/*

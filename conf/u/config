@@ -1,0 +1,2 @@
+SCHROOT_DIST=unstable
+SCHROOT_CHROOT=unstable-amd64-sbuild

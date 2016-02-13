@@ -1,0 +1,48 @@
+#!/bin/bash
+
+ENV=$1
+SCONFIG=$2
+
+if [ -z "$ENV" ] || [ -z "$SCONFIG" ] ; then
+    echo "$0 <env> <config>"
+    exit
+fi
+
+# Env check
+ENV=~/.ob/$ENV
+if [ ! -d "$ENV" ] ; then
+    echo "Env $ENV not found!"
+    exit
+fi
+
+# Global config
+GCONFIG=$ENV/config
+if [ ! -f "$GCONFIG" ] ; then
+    echo "Global config $GCONFIG not found!"
+    exit
+fi
+SCHROOT_DIST=""
+SCHROOT_CHROOT=""
+SCHROOT_EXTRA=()
+. "$GCONFIG"
+
+# Sbuild config check
+SCONFIG=$ENV/sbuild/$SCONFIG.conf
+if [ ! -f "$SCONFIG" ] ; then
+    echo "Sbuild config $SCONFIG not found!"
+    exit
+fi
+
+shift
+shift
+
+echo "=================================================="
+echo "Env           : $ENV"
+echo "Distribution  : $SCHROOT_DIST"
+echo "Chroot        : $SCHROOT_CHROOT"
+echo "Sbuild config : $SCONFIG"
+echo "Sbuild params : ${SCHROOT_EXTRA[@]}"
+echo "=================================================="
+
+SBUILD_CONFIG=$SCONFIG sbuild --dist "$SCHROOT_DIST" --chroot "$SCHROOT_CHROOT" "${SCHROOT_EXTRA[@]}"
+#lintian

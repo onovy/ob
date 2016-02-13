@@ -1,0 +1,11 @@
+#!/bin/bash
+
+CHROOTS=(unstable-amd64 jessie-amd64)
+
+for CHROOT in "${CHROOTS[@]}" ; do
+    echo "---------------------------------"
+    echo "$CHROOT"
+    echo "---------------------------------"
+    echo ""
+    sudo sbuild-update -udcar "$CHROOT"
+done
