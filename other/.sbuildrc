@@ -1,0 +1,6 @@
+$build_arch_all = 1;
+$build_source = 1;
+
+# don't remove this, Perl needs it:
+1;
+
