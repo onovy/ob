@@ -45,4 +45,4 @@ echo "Sbuild params : ${SCHROOT_EXTRA[@]}"
 echo "=================================================="
 
 SBUILD_CONFIG=$SCONFIG sbuild --dist "$SCHROOT_DIST" --chroot "$SCHROOT_CHROOT" "${SCHROOT_EXTRA[@]}"
-#lintian
+lintian
