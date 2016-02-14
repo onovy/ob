@@ -1,7 +1,7 @@
 # ob
 Scripts for simpler build of Debian packages
 
-## Examples
+## Usage
 Build Jessie package and use "all" config (adt, piuparts, lintian):
 
 `ob j all`
@@ -9,3 +9,11 @@ Build Jessie package and use "all" config (adt, piuparts, lintian):
 Build Unstable package and use "adt" config:
 
 `ob u adt`
+
+Update schroots:
+
+`ob-update`
+
+Clean old schroot sessions:
+
+`ob-cleanup`
