@@ -1,0 +1,11 @@
+#!/bin/bash
+
+adt-run "$@"
+RET=$?
+
+# Ignore missing tests
+if [ $RET == 8 ] ; then
+    exit 0
+fi
+
+exit $RET
