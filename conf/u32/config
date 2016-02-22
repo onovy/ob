@@ -1,0 +1,3 @@
+SCHROOT_ARCH=i386
+SCHROOT_DIST=unstable
+SCHROOT_CHROOT=unstable-i386-sbuild
