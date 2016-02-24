@@ -1,0 +1,3 @@
+SCHROOT_DIST=wheezy
+SCHROOT_CHROOT=wheezy-amd64-sbuild
+SCHROOT_EXTRA=('--extra-repository=deb http://httpredir.debian.org/debian wheezy-backports main' '--build-dep-resolver=aptitude')

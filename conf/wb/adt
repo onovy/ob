@@ -1,0 +1,9 @@
+--setup-commands
+echo "deb http://httpredir.debian.org/debian wheezy-backports main" >/etc/apt/sources.list.d/adt.list
+--setup-commands
+printf "Package: *\nPin: release a=wheezy-backports\nPin-Priority: 999\n" >/etc/apt/preferences.d/adt
+--setup-commands
+apt-get update
+---
+schroot
+wheezy-amd64-sbuild
