@@ -1,3 +1,3 @@
-SCHROOT_DIST=unstable
+SCHROOT_DIST=experimental
 SCHROOT_CHROOT=unstable-amd64-sbuild
 SCHROOT_EXTRA=('--extra-repository=deb http://httpredir.debian.org/debian experimental main' '--build-dep-resolver=aspcud')
