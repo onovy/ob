@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Try to unmount
-mount | grep "/run/schroot/mount" | cut -d " " -f 3 | sudo xargs umount
-mount | grep "/run/schroot/mount" | cut -d " " -f 3 | sudo xargs umount
+mount | grep "/run/schroot/mount" | cut -d " " -f 3 | sudo xargs -r umount
+mount | grep "/run/schroot/mount" | cut -d " " -f 3 | sudo xargs -r umount
 
 mount | grep /run/schroot
 if [ $? == 0 ] ; then
