@@ -1,0 +1,3 @@
+SCHROOT_ARCH=x32
+SCHROOT_DIST=unstable
+SCHROOT_CHROOT=unstable-x32-sbuild
