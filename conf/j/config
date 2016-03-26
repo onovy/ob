@@ -1,2 +1,2 @@
-SCHROOT_DIST=jessie
+SCHROOT_DIST=jessie-backports
 SCHROOT_CHROOT=jessie-amd64-sbuild
