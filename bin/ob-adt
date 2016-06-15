@@ -1,6 +1,6 @@
 #!/bin/bash
 
-adt-run "$@"
+autopkgtest "$@"
 RET=$?
 
 # Ignore missing tests

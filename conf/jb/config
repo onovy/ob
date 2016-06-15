@@ -1,3 +1,5 @@
 SCHROOT_DIST=jessie-backports
 SCHROOT_CHROOT=jessie-amd64-sbuild
 SCHROOT_EXTRA=('--extra-repository=deb http://httpredir.debian.org/debian jessie-backports main' '--build-dep-resolver=aspcud')
+
+#'--debbuildopt=-v1.1.0-3~bpo8+1'
