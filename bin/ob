@@ -37,6 +37,26 @@ fi
 shift
 shift
 
+FAST=""
+while [[ $# -gt 0 ]] ; do
+    KEY="$1"
+    shift
+    case $KEY in
+        -f)
+            FAST="1"
+            export DEB_BUILD_OPTIONS="nocheck nodocs"
+        ;;
+        -v)
+            SCHROOT_EXTRA+="--debbuildopt=-v$1"
+            shift
+        ;;
+        *)
+            echo "Unknown option: $KEY"
+            exit 1
+        ;;
+    esac
+done
+
 echo "=================================================="
 echo "Env           : $ENV"
 echo "Architecture  : $SCHROOT_ARCH"
@@ -44,7 +64,12 @@ echo "Distribution  : $SCHROOT_DIST"
 echo "Chroot        : $SCHROOT_CHROOT"
 echo "Sbuild config : $SCONFIG"
 echo "Sbuild params : ${SCHROOT_EXTRA[@]}"
+echo "Debbuild opts : $DEB_BUILD_OPTIONS"
 echo "=================================================="
 
 SBUILD_CONFIG=$SCONFIG sbuild --arch "$SCHROOT_ARCH" --dist "$SCHROOT_DIST" --chroot "$SCHROOT_CHROOT" "${SCHROOT_EXTRA[@]}"
 lintian
+
+if [ -n "$FAST" ] ; then
+    echo "WARNING: Don't upload this package, fast mode was used!"
+fi
