@@ -1,4 +1,4 @@
 SCHROOT_ARCH=i386
 SCHROOT_DIST=experimental
 SCHROOT_CHROOT=unstable-i386-sbuild
-SCHROOT_EXTRA=('--extra-repository=deb http://httpredir.debian.org/debian experimental main' '--build-dep-resolver=aspcud')
+SCHROOT_EXTRA=('--extra-repository=deb http://ftp.cz.debian.org/debian experimental main' '--build-dep-resolver=aspcud')
