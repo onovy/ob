@@ -47,7 +47,7 @@ while [[ $# -gt 0 ]] ; do
             export DEB_BUILD_OPTIONS="nocheck nodocs"
         ;;
         -v)
-            SCHROOT_EXTRA+="--debbuildopt=-v$1"
+            SCHROOT_EXTRA+=("--debbuildopt=-v$1")
             shift
         ;;
         *)
