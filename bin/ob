@@ -42,6 +42,14 @@ while [[ $# -gt 0 ]] ; do
     KEY="$1"
     shift
     case $KEY in
+        -nc)
+            FAST="1"
+            export DEB_BUILD_OPTIONS="nocheck"
+        ;;
+        -nd)
+            FAST="1"
+            export DEB_BUILD_OPTIONS="nodocs"
+        ;;
         -f)
             FAST="1"
             export DEB_BUILD_OPTIONS="nocheck nodocs"
