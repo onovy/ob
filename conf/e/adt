@@ -1,3 +1,9 @@
+--setup-commands
+echo "deb http://ftp.cz.debian.org/debian experimental main" >/etc/apt/sources.list.d/adt.list
+--setup-commands
+printf "Package: *\nPin: release a=experimental\nPin-Priority: 999\n" >/etc/apt/preferences.d/adt
+--setup-commands
+apt-get update
 --
 schroot
 unstable-amd64-sbuild
