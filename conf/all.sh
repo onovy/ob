@@ -1,7 +1,7 @@
 #!/bin/bash
 
 for DIR in * ; do
-    if [ -d "$DIR" ] ; then
+    if [ -d "$DIR" ] && [ "$DIR" != "_repo" ] ; then
         echo $DIR
         pushd $DIR/sbuild >/dev/null
         ./all.sh
