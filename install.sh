@@ -8,7 +8,6 @@ mkdir -p ~/bin
 ln -Ts $(realpath bin) ~/bin/ob
 
 # Other configs
-ln -Ts $(realpath other/.lintianrc) ~/.lintianrc
-ln -Ts $(realpath other/.quiltrc) ~/.quiltrc
-ln -Ts $(realpath other/.sbuildrc) ~/.sbuildrc
-ln -Ts $(realpath other/.dput.cf) ~/.dput.cf
+for CONF in .lintianrc .quiltrc .sbuildrc .devscripts .gbp.conf .gitconfig .reportbugrc ; do
+    ln -Ts $(realpath other/$CONF) ~/$CONF
+done
