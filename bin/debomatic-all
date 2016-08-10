@@ -1,0 +1,5 @@
+#!/bin/sh
+
+for host in amd64 i386 arm64 armel armhf mips64el mips mipsel powerpc ppc64el s390x ; do
+	dput debomatic-$host $1
+done
