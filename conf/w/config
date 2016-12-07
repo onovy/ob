@@ -1,2 +1,0 @@
-SCHROOT_DIST=wheezy
-SCHROOT_CHROOT=wheezy-amd64-sbuild
