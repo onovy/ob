@@ -66,7 +66,7 @@ while [[ $# -gt 0 ]] ; do
 done
 
 EXTRA_PACKAGES=""
-for p in $(find ~/.ob/_repo -type f) ; do
+for p in $(find ~/.ob/_repo -type f -name "*.deb") ; do
     EXTRA_PACKAGES+="--extra-package=$p "
 done
 
