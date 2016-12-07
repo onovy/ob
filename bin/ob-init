@@ -1,0 +1,9 @@
+#!/bin/bash -e
+
+# unstable amd64
+sudo sbuild-createchroot --include=eatmydata,ccache unstable /srv/chroot/unstable-amd64-sbuild http://ftp.cz.debian.org/debian
+echo "command-prefix=eatmydata" | sudo tee -a /etc/schroot/chroot.d/unstable-amd64-*
+
+# jessie amd64
+sudo sbuild-createchroot --include=eatmydata,ccache jessie /srv/chroot/jessie-amd64-sbuild http://ftp.cz.debian.org/debian
+echo "command-prefix=eatmydata" | sudo tee -a /etc/schroot/chroot.d/jessie-amd64-*
