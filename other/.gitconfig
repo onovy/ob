@@ -1,8 +1,6 @@
 [user]
 	name = Ondřej Nový
 	email = onovy@debian.org
-[gpg]
-#	program = gpg2
 
 [url "ssh://git.debian.org/git/"]
     insteadOf = git://anonscm.debian.org/
