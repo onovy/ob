@@ -1,3 +1,6 @@
 SCHROOT_DIST=experimental
 SCHROOT_CHROOT=unstable-amd64-sbuild
-SCHROOT_EXTRA=('--extra-repository=deb http://ftp.cz.debian.org/debian experimental main contrib non-free' '--build-dep-resolver=aptitude')
+SCHROOT_EXTRA=('--extra-repository=deb http://deb.debian.org/debian experimental main contrib non-free' \
+'--extra-repository=deb http://incoming.debian.org/debian-buildd/ buildd-experimental main contrib non-free' \
+'--build-dep-resolver=aptitude')
+'--chroot-setup-commands=printf "Package: *\nPin: release a=experimental\nPin-Priority: 800\n" >/etc/apt/preferences.d/adt')

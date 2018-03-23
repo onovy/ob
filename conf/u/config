@@ -1,2 +1,3 @@
 SCHROOT_DIST=unstable
 SCHROOT_CHROOT=unstable-amd64-sbuild
+SCHROOT_EXTRA=('--extra-repository=deb http://incoming.debian.org/debian-buildd/ buildd-unstable main contrib non-free')

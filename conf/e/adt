@@ -1,5 +1,7 @@
 --setup-commands
-echo "deb http://ftp.cz.debian.org/debian experimental main" >/etc/apt/sources.list.d/adt.list
+echo "deb http://deb.debian.org/debian experimental main" >/etc/apt/sources.list.d/adt.list
+--setup-commands
+echo "deb http://incoming.debian.org/debian-buildd/ buildd-experimental main contrib non-free" >/etc/apt/sources.list.d/adt.list
 --setup-commands
 printf "Package: *\nPin: release a=experimental\nPin-Priority: 999\n" >/etc/apt/preferences.d/adt
 --setup-commands
