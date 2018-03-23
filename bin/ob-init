@@ -1,5 +1,8 @@
 #!/bin/bash -e
 
+echo "tmpfs /tmp tmpfs nodev,nosuid 0 0" | sudo tee -a /etc/schroot/sbuild/fstab
+echo "/var/cache/apt/archives /var/cache/apt/archives none rw,bind 0 0" | sudo tee -a /etc/schroot/sbuild/fstab
+
 # unstable amd64
 sudo sbuild-createchroot --include=eatmydata,ccache unstable /srv/chroot/unstable-amd64-sbuild http://ftp.cz.debian.org/debian
 echo "command-prefix=eatmydata" | sudo tee -a /etc/schroot/chroot.d/unstable-amd64-*
