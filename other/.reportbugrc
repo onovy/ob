@@ -7,7 +7,7 @@ mode advanced
 # default user interface
 ui text
 # offline setting - comment out to be online
-offline
+#offline
 # name and email setting (if non-default)
 realname "Ondřej Nový"
 email "onovy@debian.org"
