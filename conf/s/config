@@ -1,0 +1,2 @@
+SCHROOT_DIST=stretch
+SCHROOT_CHROOT=stretch-amd64-sbuild
