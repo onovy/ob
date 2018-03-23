@@ -1,0 +1,4 @@
+--apt-upgrade
+--
+schroot
+unstable-i386-sbuild
