@@ -2,7 +2,10 @@ $build_arch_all = 1;
 $build_source = 1;
 $nolog = 1;
 $resolve_alternatives = 1;
+$source_only_changes = 1; ## Don't work on jessie
+#$purge_session = 'successful';
 $ENV{'DEB_BUILD_OPTIONS'} .= ' parallel=2';
+$clean_source = 0;
 
 # don't remove this, Perl needs it:
 1;
