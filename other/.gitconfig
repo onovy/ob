@@ -9,3 +9,23 @@
     insteadOf = https://anonscm.debian.org/cgit/
     insteadOf = http://anonscm.debian.org/git/
     insteadOf = http://anonscm.debian.org/cgit/
+
+[url "ssh://git@salsa.debian.org/"]
+    insteadOf = https://salsa.debian.org/
+    insteadOf = http://salsa.debian.org/
+
+[url "ssh://git@salsa.debian.org/openstack-team/"]
+    insteadOf = git://anonscm.debian.org/openstack/
+    insteadOf = git://git.debian.org/openstack/
+    insteadOf = https://anonscm.debian.org/git/openstack/
+    insteadOf = https://anonscm.debian.org/cgit/openstack/
+    insteadOf = http://anonscm.debian.org/git/openstack/
+    insteadOf = http://anonscm.debian.org/cgit/openstack/
+
+[url "ssh://git@salsa.debian.org/python-team/modules/"]
+    insteadOf = git://anonscm.debian.org/python-modules/packages/
+    insteadOf = git://git.debian.org/python-modules/packages/
+    insteadOf = https://anonscm.debian.org/git/python-modules/packages/
+    insteadOf = https://anonscm.debian.org/cgit/python-modules/packages/
+    insteadOf = http://anonscm.debian.org/git/python-modules/packages/
+    insteadOf = http://anonscm.debian.org/cgit/python-modules/packages/
