@@ -10,7 +10,3 @@ echo "command-prefix=eatmydata" | sudo tee -a /etc/schroot/chroot.d/unstable-amd
 # stretch amd64
 sudo sbuild-createchroot --include=eatmydata,ccache stretch /srv/chroot/stretch-amd64-sbuild https://deb.debian.org/debian
 echo "command-prefix=eatmydata" | sudo tee -a /etc/schroot/chroot.d/stretch-amd64-*
-
-# jessie amd64
-sudo sbuild-createchroot --include=eatmydata,ccache jessie /srv/chroot/jessie-amd64-sbuild https://deb.debian.org/debian
-echo "command-prefix=eatmydata" | sudo tee -a /etc/schroot/chroot.d/jessie-amd64-*

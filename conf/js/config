@@ -1,2 +1,0 @@
-SCHROOT_DIST=jessie-security
-SCHROOT_CHROOT=jessie-amd64-sbuild

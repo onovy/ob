@@ -1,9 +1,0 @@
---setup-commands
-echo "deb http://deb.debian.org/debian jessie-backports main" >/etc/apt/sources.list.d/adt.list
---setup-commands
-printf "Package: *\nPin: release a=jessie-backports\nPin-Priority: 999\n" >/etc/apt/preferences.d/adt
---setup-commands
-apt-get update
---
-schroot
-jessie-amd64-sbuild
