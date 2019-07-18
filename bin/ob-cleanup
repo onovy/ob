@@ -1,18 +1,3 @@
 #!/bin/bash
 
-# Try to unmount
-mount | grep "/run/schroot/mount" | cut -d " " -f 3 | sudo xargs -r umount
-mount | grep "/run/schroot/mount" | cut -d " " -f 3 | sudo xargs -r umount
-
-mount | grep /run/schroot
-if [ $? == 0 ] ; then
-	echo "Still mounted!"
-	exit
-fi
-
-sudo rm -rf /run/schroot/mount/*
-sudo rm -rf /var/lib/schroot/unpack/*
-sudo rm -rf /var/lib/schroot/session/*
-sudo rm -rf /var/lib/schroot/union/overlay/*
-sudo rm -rf /var/lib/schroot/union/underlay/*
-sudo rm -rf /var/lib/sbuild/build/*
+sudo schroot --end-session --all-sessions
