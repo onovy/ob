@@ -3,10 +3,33 @@
 echo "tmpfs /tmp tmpfs nodev,nosuid 0 0" | sudo tee -a /etc/schroot/sbuild/fstab
 echo "/var/cache/apt/archives /var/cache/apt/archives none rw,bind 0 0" | sudo tee -a /etc/schroot/sbuild/fstab
 
+# ccache
+dir=/var/cache/ccache-sbuild
+install --group=sbuild --mode=2775 -d $dir
+env CCACHE_DIR=$dir ccache --max-size 4G
+cat >>/etc/schroot/sbuild/fstab <<END
+$dir $dir none rw,bind 0 0
+END
+cat >$dir/sbuild-setup <<END
+#!/bin/sh
+export CCACHE_DIR=$dir
+export CCACHE_UMASK=002
+export CCACHE_COMPRESS=1
+unset CCACHE_HARDLINK
+export PATH="/usr/lib/ccache:\$PATH"
+exec "\$@"
+END
+chmod a+rx $dir/sbuild-setup
+unset dir
+
 # unstable amd64
 sudo sbuild-createchroot --include=eatmydata,ccache unstable /srv/chroot/unstable-amd64-sbuild https://deb.debian.org/debian
-echo "command-prefix=eatmydata" | sudo tee -a /etc/schroot/chroot.d/unstable-amd64-*
+echo "command-prefix=eatmydata,/var/cache/ccache-sbuild/sbuild-setup" | sudo tee -a /etc/schroot/chroot.d/unstable-amd64-*
 
 # stretch amd64
-sudo sbuild-createchroot --include=eatmydata,ccache stretch /srv/chroot/stretch-amd64-sbuild https://deb.debian.org/debian
+sudo sbuild-createchroot --include=eatmydata stretch /srv/chroot/stretch-amd64-sbuild https://deb.debian.org/debian
 echo "command-prefix=eatmydata" | sudo tee -a /etc/schroot/chroot.d/stretch-amd64-*
+
+# buster amd64
+sudo sbuild-createchroot --include=eatmydata buster /srv/chroot/buster-amd64-sbuild https://deb.debian.org/debian
+echo "command-prefix=eatmydata" | sudo tee -a /etc/schroot/chroot.d/buster-amd64-*
