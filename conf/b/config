@@ -1,0 +1,2 @@
+SCHROOT_DIST=buster
+SCHROOT_CHROOT=buster-amd64-sbuild
