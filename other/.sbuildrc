@@ -6,6 +6,9 @@ $source_only_changes = 1; ## Don't work on jessie
 #$purge_session = 'successful';
 $ENV{'DEB_BUILD_OPTIONS'} .= ' parallel=2';
 $clean_source = 0;
+$run_lintian = 0;
+$apt_distupgrade = 0;
+$apt_update = 0;
 
 # don't remove this, Perl needs it:
 1;
