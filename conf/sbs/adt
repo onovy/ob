@@ -1,0 +1,9 @@
+--setup-commands
+echo "deb http://deb.debian.org/debian stretch-backports main" >/etc/apt/sources.list.d/adt.list
+--setup-commands
+printf "Package: *\nPin: release a=stretch-backports\nPin-Priority: 999\n" >/etc/apt/preferences.d/adt
+--setup-commands
+apt-get update
+--
+schroot
+stretch-amd64-sbuild
