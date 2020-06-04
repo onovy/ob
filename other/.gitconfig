@@ -29,3 +29,13 @@
     insteadOf = https://anonscm.debian.org/cgit/python-modules/packages/
     insteadOf = http://anonscm.debian.org/git/python-modules/packages/
     insteadOf = http://anonscm.debian.org/cgit/python-modules/packages/
+
+[url "ssh://git@salsa.debian.org/science-team/"]
+    insteadOf = git://anonscm.debian.org/debian-science/packages/
+    insteadOf = git://git.debian.org/debian-science/packages/
+    insteadOf = https://anonscm.debian.org/git/debian-science/packages/
+    insteadOf = https://anonscm.debian.org/cgit/debian-science/packages/
+    insteadOf = http://anonscm.debian.org/git/debian-science/packages/
+    insteadOf = http://anonscm.debian.org/cgit/debian-science/packages/
+[pull]
+	rebase = false
