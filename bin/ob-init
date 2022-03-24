@@ -33,3 +33,7 @@ echo "command-prefix=eatmydata" | sudo tee -a /etc/schroot/chroot.d/stretch-amd6
 # buster amd64
 sudo sbuild-createchroot --include=eatmydata buster /srv/chroot/buster-amd64-sbuild https://deb.debian.org/debian
 echo "command-prefix=eatmydata" | sudo tee -a /etc/schroot/chroot.d/buster-amd64-*
+
+# bullseye
+sudo sbuild-createchroot --include=eatmydata bullseye /srv/chroot/bullseye-amd64-sbuild https://deb.debian.org/debian
+echo "command-prefix=eatmydata" | sudo tee -a /etc/schroot/chroot.d/bullseye-amd64-*

@@ -1,0 +1,2 @@
+SCHROOT_DIST=bullseye
+SCHROOT_CHROOT=bullseye-amd64-sbuild
