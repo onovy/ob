@@ -26,10 +26,6 @@ unset dir
 sudo sbuild-createchroot --include=eatmydata,ccache unstable /srv/chroot/unstable-amd64-sbuild https://deb.debian.org/debian
 echo "command-prefix=eatmydata,/var/cache/ccache-sbuild/sbuild-setup" | sudo tee -a /etc/schroot/chroot.d/unstable-amd64-*
 
-# stretch amd64
-sudo sbuild-createchroot --include=eatmydata stretch /srv/chroot/stretch-amd64-sbuild https://deb.debian.org/debian
-echo "command-prefix=eatmydata" | sudo tee -a /etc/schroot/chroot.d/stretch-amd64-*
-
 # buster amd64
 sudo sbuild-createchroot --include=eatmydata buster /srv/chroot/buster-amd64-sbuild https://deb.debian.org/debian
 echo "command-prefix=eatmydata" | sudo tee -a /etc/schroot/chroot.d/buster-amd64-*

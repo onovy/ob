@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CHROOTS=(unstable-amd64 stretch-amd64 buster-amd64 bullseye-amd64)
+CHROOTS=(unstable-amd64 buster-amd64 bullseye-amd64)
 
 for CHROOT in "${CHROOTS[@]}" ; do
     echo "---------------------------------"
